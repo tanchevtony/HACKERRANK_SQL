@@ -236,7 +236,8 @@ When ordered alphabetically, the CITY names are listed as ABC, DEF, PQRS, and WX
 
 **Solution**
 ```sql
-select city, length(city) from station order by length(city) DESC,city ASC fetch first row only;
+SELECT city, LENGTH(city) as length_char FROM station ORDER BY LENGTH(city) ASC, city ASC LIMIT 1;
+SELECT city, LENGTH(city) as length_char FROM station ORDER BY LENGTH(city) DESC LIMIT 1;
     
 ```
 
